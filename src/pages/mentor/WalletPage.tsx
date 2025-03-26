@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useToast } from '@/hooks/use-toast';
-import { Bank, CreditCard, PlusCircle, Smartphone } from 'lucide-react';
+import { Banknote, BanknoteIcon, CreditCard, PlusCircle, Smartphone } from 'lucide-react';
 
 const profileSchema = z.object({
   fullName: z.string().min(2, {
@@ -295,7 +295,7 @@ const WalletPage = () => {
                       </div>
                       
                       <Button type="submit">
-                        <Bank className="mr-2 h-4 w-4" />
+                        <Banknote className="mr-2 h-4 w-4" />
                         Add Bank Account
                       </Button>
                     </form>
@@ -353,7 +353,7 @@ const WalletPage = () => {
                 {activePaymentMethod === 'bank' ? (
                   <>
                     <div className="bg-primary/10 p-2 rounded-full">
-                      <Bank className="h-6 w-6 text-primary" />
+                      <BanknoteIcon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-medium">Bank Account</h3>
