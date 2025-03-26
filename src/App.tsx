@@ -15,6 +15,12 @@ import ProfilePage from "./pages/dashboard/ProfilePage";
 import BookingsPage from "./pages/dashboard/BookingsPage";
 import PaymentsPage from "./pages/dashboard/PaymentsPage";
 
+// Mentor Dashboard pages
+import MentorDashboardLayout from "./components/dashboard/MentorDashboardLayout";
+import ServicesPage from "./pages/mentor/ServicesPage";
+import MentorPaymentsPage from "./pages/mentor/PaymentsPage";
+import WalletPage from "./pages/mentor/WalletPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,12 +33,21 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/mentor/:mentorId" element={<MentorProfile />} />
           
-          {/* Dashboard Routes */}
+          {/* Mentee Dashboard Routes */}
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardHome />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="bookings" element={<BookingsPage />} />
             <Route path="payments" element={<PaymentsPage />} />
+          </Route>
+          
+          {/* Mentor Dashboard Routes */}
+          <Route path="/mentor/dashboard" element={<MentorDashboardLayout />}>
+            <Route index element={<DashboardHome />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="bookings" element={<BookingsPage />} />
+            <Route path="payments" element={<MentorPaymentsPage />} />
+            <Route path="wallet" element={<WalletPage />} />
           </Route>
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
