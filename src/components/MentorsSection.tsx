@@ -1,10 +1,12 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const mentors = [
   {
+    id: "sarah-johnson",
     name: "Sarah Johnson",
     role: "Tech Lead at Google",
     specialties: ["Machine Learning", "Career Transition", "Leadership"],
@@ -13,6 +15,7 @@ const mentors = [
     reviews: 134
   },
   {
+    id: "david-chen",
     name: "David Chen",
     role: "Product Director at Meta",
     specialties: ["Product Strategy", "UX Design", "Market Research"],
@@ -21,6 +24,7 @@ const mentors = [
     reviews: 98
   },
   {
+    id: "maya-patel",
     name: "Maya Patel",
     role: "Startup Advisor & Angel Investor",
     specialties: ["Fundraising", "Growth Strategy", "Business Development"],
@@ -29,6 +33,7 @@ const mentors = [
     reviews: 67
   },
   {
+    id: "james-wilson",
     name: "James Wilson",
     role: "Engineering Director at Amazon",
     specialties: ["System Design", "Team Building", "Technical Leadership"],
@@ -81,7 +86,9 @@ const MentorCard = ({ mentor, index }: { mentor: typeof mentors[0], index: numbe
         </div>
         
         <div className="mt-auto pt-4">
-          <Button variant="outline" className="w-full">View Profile</Button>
+          <Button variant="outline" className="w-full" asChild>
+            <Link to={`/mentor/${mentor.id}`}>View Profile</Link>
+          </Button>
         </div>
       </div>
     </div>
@@ -170,8 +177,8 @@ const MentorsSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Button size="lg" className="px-8">
-            Browse All Mentors
+          <Button size="lg" className="px-8" asChild>
+            <Link to="/mentors">Browse All Mentors</Link>
           </Button>
         </div>
       </div>
