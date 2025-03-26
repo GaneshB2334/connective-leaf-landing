@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
   return (
     <aside 
       className={cn(
-        "fixed inset-y-0 left-0 z-40 flex flex-col border-r border-gray-200 bg-white transition-all duration-300 pt-16",
+        "inset-y-0 left-0 z-40 flex flex-col border-r border-gray-200 bg-white transition-all duration-300 pt-16",
         collapsed ? "w-[70px]" : "w-64"
       )}
     >

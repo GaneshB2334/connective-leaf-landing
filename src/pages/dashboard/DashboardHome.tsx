@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Calendar, CreditCard, User, Book } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const statsCards = [
   {
@@ -60,7 +62,7 @@ const DashboardHome = () => {
         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
         <p className="text-muted-foreground">Welcome back, Alex! Here's an overview of your mentorship journey.</p>
       </div>
-      
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {statsCards.map((card, index) => (
           <Card key={index}>
@@ -79,7 +81,7 @@ const DashboardHome = () => {
           </Card>
         ))}
       </div>
-      
+
       <div className="grid gap-4 md:grid-cols-2">
         <Card className="col-span-1">
           <CardHeader>
@@ -112,7 +114,7 @@ const DashboardHome = () => {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="col-span-1">
           <CardHeader>
             <CardTitle>Learning Progress</CardTitle>
@@ -147,7 +149,7 @@ const DashboardHome = () => {
                   <div className="h-2 rounded-full bg-primary" style={{ width: '90%' }}></div>
                 </div>
               </div>
-              
+
               <div className="rounded-lg bg-muted p-4 mt-4">
                 <div className="font-medium">Your next milestone</div>
                 <div className="mt-1 text-sm text-muted-foreground">Complete 5 more sessions to unlock advanced mentorship opportunities</div>
